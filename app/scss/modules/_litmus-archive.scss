@@ -1,0 +1,96 @@
+.litmus-archive {
+	transform: skewY(10deg);
+	border-top: 10px solid $red;
+	background-color: $white;
+	min-height: 500px;
+	margin-bottom: 100px;
+	&__inner {
+		transform: skewY(-10deg);
+		padding: 70px 20px 0;
+	}
+}
+
+.episodes-wrapper {
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+		clear: both;
+	}
+}
+
+.episode {
+
+	@media screen and (min-width: 599px) {
+		display: block;
+		float: left;
+		width: calc(50% - 20px);
+		margin-right: 40px;
+
+		&:nth-child(even) {
+			margin-right: 0;
+		}
+	}
+
+	&__art {
+		position: relative;
+		width: 100%;
+		height: 55vw;
+		overflow: hidden;
+
+		@media screen and (min-width: 599px) {
+			height: calc(50vw - 20px);
+		}
+
+		img {
+			width: calc(100vw - 40px);
+			height: auto;
+
+			@media screen and (min-width: 599px) {
+				width: auto;
+				height: 100%;
+			}
+		}
+	}
+
+	&__play {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 40px;
+		height: 40px;
+		background: url("/interactive/litmus/images/play.png") no-repeat center $white;
+		border: 0;
+
+		&:hover {
+		}
+	}
+
+}
+
+.episode-info {
+	margin-bottom: 20px;
+	background-color: $lightGrey;
+	padding: 5px 10px 10px;
+
+	&__title {
+		font-family: $lato;
+		display: block;
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+
+	&__description {
+		@include bodyText;
+		font-size: 14px;
+	}
+
+	&__date {
+		display: block;
+		font-family: $lato;
+		font-size: 12px;
+		margin-bottom: 15px;
+		font-weight: bold;
+	}
+
+}

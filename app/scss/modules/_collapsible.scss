@@ -1,0 +1,121 @@
+.collapsible {
+	position: relative;
+	z-index: 3;
+	transform: skewY(10deg);
+  transition: padding-bottom .25s ease-in-out;
+
+
+	&.open {
+		padding-bottom: 120px;
+	}
+
+	&::after {
+		overflow: hidden;
+		position: absolute;
+		top: 40px;
+		left: 0;
+		content: "";
+		display: block;
+		width: calc(100% + 40px);
+		margin-left: -20px;
+	  height: 10px;
+	  background-color: $blue;
+
+		@media screen and (min-width: 600px) {
+			top: 50px;
+		}
+    
+    @media screen and (min-width: 768px) {
+      top: 110px;
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+}
+
+.collapsible__control {
+	top: 80px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+
+	@media screen and (min-width: 600px) {
+    top: -30px;
+	}
+  
+  @media screen and (min-width: 768px) {
+    left: 26%;
+    width: 48%;
+  }
+
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+		clear: both;
+	}
+}
+
+.collapsible__input {
+	display: none;
+}
+
+.collapsible__label {
+	position: absolute;
+	top: -110px;
+	z-index: 2;
+	outline: none;
+	display: block;
+	transform: skewY(-10deg);
+  font-weight: bold;
+  font-family: $lato;
+  text-transform: uppercase;
+  padding: 0;
+  color: $white;
+	font-weight: 300;
+	font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  line-height: 14px;
+
+	@media screen and (min-width: 600px) {
+    top: 0;
+	}
+  
+  @media screen and (min-width: 768px) {
+    top: -100px;
+  }
+
+  .open & {
+  	border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 14px;
+	}
+
+	&::before {
+	  content: ' ';
+	  display: inline-block;
+
+	  border-top: 5px solid transparent;
+	  border-bottom: 5px solid transparent;
+	  border-left: 5px solid currentColor;
+
+	  vertical-align: middle;
+	  margin-right: .7rem;
+	  transform: translateY(-2px);
+
+	  transition: transform .2s ease-out;
+
+	  .open & {
+			transform: rotate(90deg) translateX(-3px);
+
+	  }
+	}
+
+
+}

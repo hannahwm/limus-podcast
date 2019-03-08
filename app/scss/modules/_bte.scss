@@ -1,0 +1,154 @@
+.bte {
+	position: relative;
+	top: 50px;
+	z-index: 1;
+	width: calc(100% + 40px);
+	max-height: 0px;
+	margin-left: -20px;
+  overflow: hidden;
+  margin-bottom: 0;
+  transition: margin-bottom .25s ease-in-out, max-height .25s ease-in-out, padding .25s ease-in-out;
+	background-color: $white;
+
+	@media screen and(min-width: 600px) {
+		top: 60px;
+	}
+
+	@media screen and(min-width: 768px) {
+		top: 110px;
+		width: 100%;
+		margin-left: 0;
+	}
+
+	 .open & {
+	 		max-height: 3000px; //need the max-height in order to animate opening. Can be bumped up if a story is really long
+			padding: 0;
+			margin-bottom: -120px;
+
+			@media screen and(min-width: 600px) {
+			}
+
+			@media screen and(min-width: 768px) {
+				padding: 0 0 80px;
+				margin-bottom: -140px;
+			}
+	 }
+
+	&__inner {
+		position: relative;
+		z-index: -1;
+	  padding: 40px 20px 0;
+	  overflow: hidden;
+
+		@media screen and(min-width: 768px) {
+			padding: 40px 40px 45px;
+		}
+	}
+
+	&__column {
+	  transform: skewY(-10deg);
+		background-color: #eee;
+		margin: -70px 0 -70px;
+		padding: 80px 20px 220px;
+		line-height: 1.5em;
+
+		@media screen and(min-width: 600px) {
+			margin: -90px 0 -50px;
+		}
+
+		@media screen and(min-width: 768px) {
+			width: 50%;
+			margin: -100px 0 0;
+		}
+	}
+
+	&__title {
+		font-weight: bold;
+	  font-family: $lato;
+	  font-size: 1.2rem;
+	  text-transform: uppercase;
+	}
+
+	&__logo {
+		position: absolute;
+		bottom: 90px;
+		right: 20px;
+
+		@media screen and(min-width: 600px) {
+			bottom: 70px;
+		}
+	}
+
+	&__quote {
+		margin: 40px 0;
+		text-align: center;
+		color: #358EC2;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1.125em;
+		font-style: italic;
+
+		@media screen and(min-width: 600px) {
+			font-size: 26px;
+		}
+
+		@media screen and(min-width: 768px) {
+			position: absolute;
+			left: 60%;
+			top: 100px;
+			width: 30%;
+			margin: 0;
+			font-size: 26px;
+		}
+	}
+}
+
+.stacked-images {
+	position: relative;
+
+	@media screen and(min-width: 600px) {
+	}
+
+	@media screen and(min-width: 768px) {
+		width: 300px;
+		margin: 0 auto;
+	}
+
+	img {
+		width: calc(50% - 10px);
+		display: block;
+
+		@media screen and(min-width: 600px) {
+		}
+
+		@media screen and(min-width: 768px) {
+			width: 100%;
+		}
+	}
+
+	img:first-child {
+		position: relative;
+		z-index: 1;
+		float: left;
+		margin-right: 20px;
+	}
+
+	img:nth-child(2) {
+		z-index: 0;
+
+		@media screen and(min-width: 600px) {
+		}
+
+		@media screen and(min-width: 768px) {
+			position: absolute;
+			top: 55%;
+			right: -80%;
+		}
+	}
+
+	+ p {
+		@media screen and(min-width: 768px) {
+			width: 60%;
+		}
+	}
+}

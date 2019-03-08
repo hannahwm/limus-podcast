@@ -1,0 +1,19 @@
+.litmus-header {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.litmus-nav {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  a {
+    @include navLinks;
+  }
+}
