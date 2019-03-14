@@ -42,6 +42,6 @@ $(document).ready(function() {
 	calcHeight();
 });
 
-$(window).resize( function() {
-	calcHeight();
-})
+// $(window).resize( function() {
+// 	calcHeight();
+// })

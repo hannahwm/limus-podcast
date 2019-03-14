@@ -61,50 +61,53 @@
 
 .litmus-featured__content {
   position: relative;
-  z-index: 1;
+  z-index: 4;
   margin: 0 auto;
-  padding-bottom: 50px;
+  margin-bottom: 70px;
 
   @media screen and (min-width: 600px) {
-    padding-bottom: 80px;
+    margin-bottom: 100px;
   }
 
   @media screen and (min-width: 768px) {
-    padding-bottom: 110px;
+    margin-bottom: 110px;
+  }
+
+  @media screen and (min-width: 1084px) {
     width: 80%;
   }
 }
 
-.litmus-featured__title {
-  @include featuredHeader;
-}
-
 .litmus-featured__date {
+  position: relative;
   font-family: $lato;
   color: $white;
   font-size: 16px;
   font-weight: 300;
   margin: 0 auto 15px;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
+    width: 80%;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1084px) {
     width: 60%;
   }
 }
 
 .litmus-featured__description {
+  position: relative;
   @include bodyText;
   line-height: 1.25em;
   color: $white;
   font-weight: 300;
   margin: 0 auto 15px;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
+    width: 80%;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1084px) {
     width: 60%;
   }
 }

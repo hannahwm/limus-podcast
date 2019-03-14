@@ -1,0 +1,470 @@
+.litmus-player {
+ &.helper {
+   height: 125px!important;
+ }
+}
+
+#litmus-player__featured {
+  height: 125px;
+  box-sizing: border-box;
+
+  &.hidden {
+    height: 0;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  &.sticky {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: url("https://via.placeholder.com/53") no-repeat top 12px left 12px $red;
+    box-sizing: border-box;
+    transition: height 1s;
+    padding: 10px 0 0;
+    background-size: 40px;
+
+    @media screen and (min-width: 600px) {
+      background: url("https://via.placeholder.com/53") no-repeat top 5px left 20px $red;
+      background-size: 53px;
+    }
+
+    @media screen and(min-width: 768px) {
+      background: url("https://via.placeholder.com/53") no-repeat top 5px left 40px $red;
+    }
+
+    .jp-playlist {
+      display: none;
+    }
+
+    .jp-details .jp-title {
+      font-family: $lato;
+      font-size: 12px;
+      color: $white;
+      margin: 3px 0 8px;
+      line-height: 1em;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      @media screen and (min-width: 600px) {
+        margin: 0;
+      }
+    }
+
+    .jp-interface {
+      width: 100%;
+      padding-left: 65px;
+      padding-right: 10px;
+      margin: 0;
+      box-sizing: border-box;
+
+      @media screen and (min-width: 600px) {
+        padding-left: 90px;
+        padding-right: 20px;
+      }
+
+      @media screen and(min-width: 768px) {
+        width: 720px;
+        margin: 0 auto;
+      }
+    }
+
+    .jp-progress {
+      width: calc(100% - 195px);
+      margin: 5px 20px 0 0;
+      float: left;
+
+      @media screen and (min-width: 768px) {
+        width: calc(100% - 225px);
+      }
+    }
+
+    .jp-details {
+      display: block!important;
+      margin: 0 0 3px;
+    }
+
+    .jp-controls {
+      height: 13px;
+    }
+
+    .jp-controls-holder {
+      position: relative;
+      width: 100px;
+      float: left;
+      margin: 0;
+    }
+
+    .jp-current-time {
+      padding-left: 0;
+      width: 30px;
+      margin-right: 6px;
+    }
+
+    .jp-type-playlist .jp-controls button {
+      width: 13px;
+      height: 13px;
+      margin-right: 20px;
+
+      &.jp-play {
+        width: 11px;
+        height: 11px;
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+.jp-audio *:focus,
+.jp-audio-stream *:focus,
+.jp-video *:focus {
+  /* Disable the browser focus highlighting. */
+  outline: none; }
+
+.jp-audio button::-moz-focus-inner,
+.jp-audio-stream button::-moz-focus-inner,
+.jp-video button::-moz-focus-inner {
+  /* Disable the browser CSS3 focus highlighting. */
+  border: 0; }
+
+.jp-audio {
+  width: 100%;
+  padding: 20px;
+}
+
+.jp-audio-stream {
+  width: 100%;
+  padding: 20px 20px 10px 20px; }
+
+.jp-interface {
+  position: relative;
+  width: 100%;
+  /* Required for the full screen */ }
+
+/* @group CONTROLS */
+.jp-video .jp-controls-holder {
+  display: block;
+  width: 100%;
+  height: 23px;
+  margin: 0;
+}
+
+#litmus-player__featured .jp-controls-holder {
+  position: absolute;
+}
+
+.jp-audio .jp-controls-holder {
+  height: 23px; }
+
+.jp-audio-stream .jp-controls-holder {
+  height: 23px; }
+
+#litmus-player__featured .jp-controls {
+  width: 100%;
+  height: 23px;
+  overflow: hidden;
+  text-align: right;
+}
+
+#litmus-player__featured.sticky .jp-controls {
+  width: auto;
+}
+
+.jp-audio .jp-controls,
+.jp-audio-stream .jp-controls {
+  margin: 0 auto; }
+
+.jp-audio-stream .jp-controls {
+  width: 100%; }
+
+.jp-controls button {
+  display: block;
+  float: left;
+  overflow: hidden;
+  text-indent: -9999px;
+  height: 23px;
+  margin: 0 1px 2px 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-size: contain;
+ }
+
+/* @group single player controls */
+// .jp-type-playlist .jp-controls button {
+//   width: 23px; }
+//
+// .jp-type-playlist .jp-play {
+//   background: url("/litmus/images/playBtn.png") center no-repeat; }
+//
+// .jp-type-playlist .jp-play:focus {
+//   background: url("/litmus/images/playBtn.png") center no-repeat; }
+//
+//
+// .jp-state-playing .jp-type-playlist .jp-play {
+//   background: url("/litmus/images/pause.png") center no-repeat;
+//   background-size: contain;
+// }
+//
+// .jp-state-playing .jp-type-playlist .jp-play:focus {
+//   background: url("/litmus/images/pause.png") center no-repeat;
+// background-size: contain;
+// }
+
+/* The right border is normally in the ul background image. */
+// .jp-audio-stream .jp-play,
+// .jp-audio-stream .jp-pause {
+//   border-right: 1px solid #180920; }
+
+// .jp-type-single .jp-stop {
+//   background: url("/litmus/images/stop.png") center no-repeat;
+//   background-size: contain;
+// }
+//
+// .jp-type-single .jp-stop:focus {
+//   background: url("/litmus/images/stop.png") center no-repeat;
+//   background-size: contain;
+// }
+
+/* @end */
+/* @group playlist player controls */
+
+.jp-playlist {
+  display: none;
+}
+
+.jp-type-playlist .jp-controls button {
+  width: 23px; }
+
+.jp-type-playlist .jp-play {
+  background: url("/litmus/images/playBtn.png") center no-repeat;
+  background-size: contain;
+}
+
+.jp-type-playlist .jp-play:focus {
+  background: url("/litmus/images/playBtn.png") center no-repeat;
+  background-size: contain;
+}
+
+.jp-state-playing div.jp-type-playlist .jp-play {
+  background: url("/litmus/images/playBtn.png") center no-repeat;
+  background-size: contain;
+
+  &.playing {
+    background: url("/litmus/images/pause.png") center no-repeat;
+    background-size: contain;
+  }
+}
+
+.jp-state-playing div.jp-type-playlist .jp-play:focus {
+  background: url("/litmus/images/playBtn.png") center no-repeat;
+  background-size: contain;
+
+  &.playing {
+    background: url("/litmus/images/pause.png") center no-repeat;
+    background-size: contain;
+  }
+}
+
+.jp-type-playlist .jp-stop {
+  background: url("/litmus/images/stop.png") center no-repeat;
+  background-size: contain;
+}
+
+.jp-type-playlist .jp-stop:focus {
+  background: url("/litmus/images/stop.png") center no-repeat;
+  background-size: contain;
+}
+
+.jp-previous,
+.jp-next {
+  display: block;
+  float: left;
+  width: 19px;
+  height: 17px;
+  text-indent: -9999px;
+  margin-top: 2px;
+  /* need this for IE6 */
+  border: none;
+  cursor: pointer;
+}
+
+#litmus-player__featured .jp-previous {
+  display: inline-block;
+  margin-right: 20px;
+  float: none;
+}
+
+#litmus-player__featured .jp-next {
+  display: inline-block;
+  float: none;
+}
+
+#litmus-player__featured.sticky .jp-next,
+#litmus-player__featured.sticky .jp-previous {
+  display: block;
+  float: left;
+}
+
+.jp-previous,
+.jp-type-playlist .jp-previous {
+  background: url("/litmus/images/prevBtn.png") center no-repeat;
+  background-size: contain;
+}
+
+.jp-previous,
+.jp-type-playlist .jp-previous:focus {
+  background: url("/litmus/images/prevBtn.png") center no-repeat;
+  background-size: contain;
+}
+
+.jp-next,
+.jp-type-playlist .jp-next {
+  background: url("/litmus/images/nextBtn.png") center no-repeat;
+  background-size: contain;
+}
+
+.jp-next,
+.jp-type-playlist .jp-next:focus {
+  background: url("/litmus/images/nextBtn.png") center no-repeat;
+  background-size: contain;
+}
+
+/* @end */
+
+/* @group progress bar */
+/* The seeking class is added/removed inside jPlayer */
+div.jp-seeking-bg {
+  background: url("/litmus/images/seeking.gif"); }
+
+.jp-progress {
+  position: relative;
+  float: left;
+  background: url("/litmus/images/bar.png") center no-repeat;
+  width: calc(100% - 230px);
+  height: 5px;
+  margin-top: 9px;
+  margin-right: 20px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.jp-seek-bar {
+  background-color: $white;
+  width: 0px;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer; }
+
+.jp-play-bar {
+  background-color: $blue;
+  width: 0px;
+  height: 100%;
+  overflow: hidden; }
+
+/* @end */
+
+/* @group current time and duration */
+.jp-current-time, .jp-duration {
+  font-family: $lato;
+  width: 30px;
+  font-size: 10px;
+  color: $white
+}
+
+#litmus-player__featured .jp-current-time, #litmus-player__featured .jp-duration {
+  margin-top: 5px;
+}
+
+#litmus-player__featured .jp-current-time {
+  padding-left: 43px;
+}
+
+#litmus-player__featured.sticky .jp-current-time {
+  padding-left: 0;
+  margin-top: 0;
+}
+
+#litmus-player__featured .jp-duration {
+  margin-top: 0;
+}
+
+.jp-current-time {
+  float: left;
+  cursor: default;
+  margin-right: 20px;
+}
+
+.jp-duration {
+  float: left;
+  cursor: pointer;
+  padding-right: 20px;
+
+  .sticky & {
+    margin-right: 0;
+    padding-right: 0;
+    width: 30px;
+    margin-left: 6px;
+    float: left;
+  }
+}
+
+.jp-video .jp-current-time {
+  padding-left: 20px; }
+
+
+/* @end */
+/* @group playlist */
+.jp-details {
+  padding: 0;
+  display: block !important;
+  margin: 0 0 3px;
+}
+
+.jp-details .jp-title {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  cursor: default;
+
+  .sticky & {
+    text-align: left;
+
+    @media screen and (min-width: 600px) {
+      text-align: center;
+    }
+  }
+}
+
+#litmus-player__featured .jp-details .jp-title {
+  @include featuredHeader;
+}
+
+/* @group NO SOLUTION error feedback */
+.jp-no-solution {
+  padding: 5px;
+  font-size: .8em;
+  background-color: #3a2a45;
+  border-top: 2px solid #554461;
+  border-left: 2px solid #554461;
+  border-right: 2px solid #180a1f;
+  border-bottom: 2px solid #180a1f;
+  color: #FFF;
+  display: none; }
+
+.jp-no-solution a {
+  color: #FFF; }
+
+.jp-no-solution span {
+  font-size: 1em;
+  display: block;
+  text-align: center;
+  font-weight: bold; }
+
+/* @end */

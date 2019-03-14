@@ -24,11 +24,18 @@
 		@media screen and (min-width: 600px) {
 			top: 50px;
 		}
-    
+
     @media screen and (min-width: 768px) {
-      top: 110px;
-			width: 100%;
+      top: 100px;
 			margin-left: 0;
+			width: calc(100% + 40px);
+			margin-left: -20px;
+		}
+
+		@media screen and (min-width: 1084px) {
+      top: 110px;
+			// width: 100%;
+			// margin-left: 0;
 		}
 	}
 }
@@ -42,8 +49,12 @@
 	@media screen and (min-width: 600px) {
     top: -30px;
 	}
-  
+
   @media screen and (min-width: 768px) {
+    left: 10%;
+  }
+
+	@media screen and (min-width: 1064px) {
     left: 26%;
     width: 48%;
   }
@@ -81,9 +92,9 @@
 	@media screen and (min-width: 600px) {
     top: 0;
 	}
-  
+
   @media screen and (min-width: 768px) {
-    top: -100px;
+    top: 0;
   }
 
   .open & {

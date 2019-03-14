@@ -30,7 +30,7 @@ gulp.task('sass', function() {
       ]
     }))
     .pipe(rename('styles.min.css'))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('dist/litmus/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -44,7 +44,7 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('app/js'))
         .pipe(rename('main.min.js'))
         // .pipe(uglify())
-        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest('dist/litmus/js'))
         .pipe(browserSync.reload({
           stream: true
         }))
@@ -52,8 +52,8 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('copyJSLibraries', function() {
-  return gulp.src('app/js/library/**/*.js')
-    .pipe(gulp.dest('dist/js/library'))
+  return gulp.src('app/js/library/**/*.+(js|swf)')
+    .pipe(gulp.dest('dist/litmus/js/library'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -69,7 +69,7 @@ Note: Remember to only upload the /images folder to your project folder in Wordp
 gulp.task('images', function(){
   return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
   .pipe(cache(imagemin()))
-  .pipe(gulp.dest('dist/interactive/litmus/images'))
+  .pipe(gulp.dest('dist/litmus/images'))
   .pipe(browserSync.reload({
     stream: true
   }))
@@ -99,7 +99,7 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('fileinclude', function() {
-  return gulp.src(['app/**/*.html'])
+  return gulp.src(['app/index.html'])
   .pipe(fileinclude())
     .pipe(useref())
     .pipe(gulp.dest('dist'))

@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Litmus</title>
-<link rel="stylesheet" href="css/styles.min.css">
+<link rel="stylesheet" href="/litmus/css/styles.min.css">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
 
 <!--********** GOOGLE Podcasts search requires this info*******-->
@@ -12,7 +12,9 @@
       title="Litmus" href="Your podcast's RSS url"/>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- <script type="text/javascript" src="https://api.simplecast.com/v1/"></script> -->
+<script type="text/javascript" src="/litmus/js/library/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/litmus/js/library/jquery.jplayer.swf"></script>
+<script type="text/javascript" src="/litmus/js/library/jplayer.playlist.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
@@ -27,11 +29,7 @@
     @@include('litmus-footer.html')
   </div>
 
-  <!--build:js js/main.min.js -->
-    <script src="js/plugins/expandSection.js"></script>
-    <script src="js/plugins/basics.js"></script>
-    <script src="js/plugins/player.js"></script>
-  <!--endbuild-->
+  <script type="text/javascript" src="/litmus/js/main.min.js"></script>
 
 </body>
 
