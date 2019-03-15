@@ -17,3 +17,23 @@
     @include navLinks;
   }
 }
+
+.limus-logo {
+  width: 150px;
+
+  @media screen and (min-width: 600px) {
+    width: 200px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 200px;
+  }
+
+  @media screen and (min-width: 1084px) {
+    width: 250px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

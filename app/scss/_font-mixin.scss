@@ -9,39 +9,38 @@
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 48px;
-    line-height: 60px;
   }
 
   @media screen and (min-width: 1400px) {
-    font-size: 64px;
-    line-height: 64px;
   }
 }
 
 @mixin featuredHeader {
   font-family: $lato;
-  font-size: 24px;
-  line-height: 1em;
+  font-size: 18px;
+  line-height: 1.25em;
   color: $white;
   font-weight: 300;
   margin: 0 0 25px;
 
+  @media screen and (min-width: 400px) {
+    font-size: 20px;
+  }
+
   @media screen and (min-width: 600px) {
+    font-size: 24px;
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 30px;
     line-height: 36px;
     text-align: center;
   }
 
   @media screen and (min-width: 1084px) {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   @media screen and (min-width: 1400px) {
-    font-size: 24px;
   }
 }
 

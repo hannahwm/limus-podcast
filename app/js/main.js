@@ -3,35 +3,34 @@ $(".collapsible__input").on("click", function() {
 });
 
 function calcHeight() {
-	var padding;
-
-	if ($(window).width() > 1450) {
-		padding = 100;
-	} else if ($(window).width() > 1200) {
-		padding = 150;
-	} else if ($(window).width() > 900) {
-		padding = 250;
-	} else if ($(window).width() > 599 && $(window).width() < 900) {
-		padding = 0;
-	} else if ($(window).width() < 400) {
-		padding = 0;
-	}
+	// var padding;
+	//
+	// if ($(window).width() > 1450) {
+	// 	padding = 100;
+	// } else if ($(window).width() > 1200) {
+	// 	padding = 150;
+	// } else if ($(window).width() > 900) {
+	// 	padding = 250;
+	// } else if ($(window).width() > 599 && $(window).width() < 900) {
+	// 	padding = 0;
+	// } else {
+	// 	padding = 0;
+	// }
 
 
 	$(".litmus-featured__image").each( function() {
 		var featuredImg = $(this).find("img"),
-		imgSrc = featuredImg.attr("src"),
-		contentHeight = $(".litmus-featured").outerHeight(),
-		diagonalStart = $(".collapsible").offset(),
-		diagonalEnd = $(".litmus-archive").offset(),
-		diagonalYone = diagonalStart.top,
-		diagonalYtwo = diagonalEnd.top,
-		diagonalHeight = diagonalYtwo - diagonalYone,
-		calcHeight = contentHeight + diagonalHeight + padding;
+		imgSrc = featuredImg.attr("src");
+		// contentHeight = $(".litmus-featured").outerHeight(),
+		// diagonalStart = $(".collapsible").offset(),
+		// diagonalEnd = $(".litmus-archive").offset(),
+		// diagonalYone = diagonalStart.top,
+		// diagonalYtwo = diagonalEnd.top,
+		// diagonalHeight = diagonalYtwo - diagonalYone,
+		// calcHeight = contentHeight + diagonalHeight + padding;
 
 		$( this ).css({
 			"background-image": "url(" + imgSrc + ")",
-			"height": calcHeight
 		});
 
 		featuredImg.hide();
@@ -42,9 +41,9 @@ $(document).ready(function() {
 	calcHeight();
 });
 
-// $(window).resize( function() {
-// 	calcHeight();
-// })
+$(window).resize( function() {
+	calcHeight();
+})
 
 var $ = jQuery;
 
@@ -99,6 +98,65 @@ var $ = jQuery;
 (function init () {
   $(document).ready(function() {
     $(".litmus").expandSection();
+  });
+})();
+
+var $ = jQuery;
+
+( function( $ ) {
+  var Neu = Neu || {};
+
+  $.fn.matchHeight = function(options) {
+      return this.each(function() {
+          var matchHeight = Object.create(Neu.matchHeight);
+          matchHeight.init(this, options);
+      });
+  };
+
+  $.fn.matchHeight.options = {
+      box: ".episode-info"
+  };
+
+  Neu.matchHeight = {
+      init: function(elem, options) {
+          var self = this;
+          self.$container = $(elem);
+          self.options = $.extend({}, $.fn.matchHeight.options, options);
+          self.bindElements();
+          self.calcHeights();
+
+      },
+      bindElements: function() {
+        var self = this;
+
+        self.$box = self.$container.find(self.options.box);
+    },
+		calcHeights: function() {
+			var self = this;
+      $(self.options.box).height("");
+
+			$(self.options.box).each(function() {
+				var divs = $(self.options.box);
+			  var heights = divs.map(function() {
+			    return $(this).height();
+			  });
+
+			   var maxHeight = Math.max.apply(this, heights);
+
+			  $(self.options.box).height(maxHeight);
+			});
+		}
+  };
+
+}( $ ) );
+
+(function init () {
+  $(document).ready(function() {
+    $(".litmus-archive").matchHeight();
+  });
+
+  $(window).resize(function() {
+    $(".litmus-archive").matchHeight();
   });
 })();
 

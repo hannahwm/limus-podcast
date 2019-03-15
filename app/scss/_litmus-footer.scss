@@ -2,4 +2,16 @@
   height: 100px;
   background-color: $darkGrey;
   color: $white;
+
+  @media screen and (min-width: 1024px) {
+		height: 150px;
+	}
+
+	@media screen and (min-width: 1700px) {
+		height: 200px;
+	}
+
+	@media screen and (min-width: 2200px) {
+		height: 300px;
+	}
 }
