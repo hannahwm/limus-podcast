@@ -17,11 +17,19 @@
   padding: 150px 20px 160px;
 
   @media screen and (min-width: 600px) {
-    padding: 172px 20px 50px;
+    padding: 172px 20px 160px;
   }
 
   @media screen and (min-width: 768px) {
-    padding: 172px 20px 300px;
+    padding: 172px 20px 250px;
+  }
+
+  @media screen and (min-width: 1300px) {
+    padding: 172px 0 300px;
+  }
+
+  @media screen and (min-width: 2200px) {
+    padding: 172px 0 400px;
   }
 
   &:before,
@@ -47,12 +55,13 @@
     width: 600px;
   }
 
-  @media screen and (min-width: 1024px) {
-    min-height: 600px;
-  }
-
   @media screen and (min-width: 1400px) {
     width: 800px;
+    min-height: 500px;
+  }
+
+  @media screen and (min-width: 2200px) {
+    min-height: 600px;
   }
 }
 

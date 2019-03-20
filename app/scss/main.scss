@@ -25,6 +25,10 @@ body {
   color: $text;
 }
 
+.litmus {
+  overflow: hidden;
+}
+
 .litmus-section-title {
   @include sectionHeader;
   margin-bottom: 40px;

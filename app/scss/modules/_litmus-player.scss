@@ -2,7 +2,8 @@
  &.helper {
    height: 125px!important;
 
-   @media screen and (min-width: 600px) {
+   @media screen and (min-width: 768px) {
+     height: 165px!important;
    }
  }
 }
@@ -41,10 +42,13 @@
     @media screen and (min-width: 600px) {
       background: url("/litmus/images/litmus-logo-bug.png") no-repeat top 5px left 20px $black;
       background-size: 53px;
+      padding: 8px 0 0;
     }
 
-    @media screen and(min-width: 768px) {
+    @media screen and(min-width: 1024px) {
       background: url("/litmus/images/litmus-logo-bug.png") no-repeat top 5px left 40px $black;
+      background-size: 53px;
+      padding: 5px 0 0;
     }
 
     .jp-playlist {
@@ -69,7 +73,7 @@
       }
 
       @media screen and (min-width: 600px) {
-        margin: 0;
+        margin: 0 0 4px;
       }
     }
 
@@ -86,11 +90,21 @@
 
       @media screen and (min-width: 600px) {
         padding-left: 90px;
-        padding-right: 20px;
+        padding-right: 72px;
       }
 
       @media screen and(min-width: 768px) {
         width: 720px;
+        margin: 0 auto;
+      }
+
+      @media screen and(min-width: 1024px) {
+        width: 800px;
+        margin: 0 auto;
+      }
+
+      @media screen and(min-width: 1200px) {
+        width: 1000px;
         margin: 0 auto;
       }
     }
@@ -103,6 +117,10 @@
         width: calc(100% - 195px);
         margin: 5px 20px 0 0;
         float: left;
+      }
+
+      @media screen and (min-width: 600px) {
+        width: calc(100% - 225px);
       }
 
       @media screen and (min-width: 768px) {
@@ -133,6 +151,11 @@
         width: 100px;
         margin: 0;
       }
+
+      @media screen and (min-width: 600px) {
+        width: 120px;
+        margin: 0;
+      }
     }
 
     .jp-current-time {
@@ -143,6 +166,11 @@
 
       @media screen and (min-width: 400px) {
         float: left;
+      }
+
+      @media screen and (min-width: 600px) {
+        float: left;
+        clear: none;
       }
     }
 
@@ -158,6 +186,10 @@
 
       &.jp-next {
         margin-right: 0;
+
+        @media screen and (min-width: 600px) {
+          margin-right: 20px;
+        }
       }
 
       &.jp-play {
@@ -177,6 +209,15 @@
 #litmus-player__featured:not(.sticky) {
   padding-bottom: 70px;
   margin-bottom: 40px;
+
+  &.hidden {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-bottom: 0;
+  }
 }
 
 .jp-audio *:focus,
@@ -214,7 +255,12 @@
 
 #litmus-player__featured .jp-controls-holder {
   position: absolute;
+  z-index: 1;
   bottom: 0;
+
+  @media screen and (min-width: 1024px) {
+    bottom: auto;
+  }
 }
 
 .jp-audio .jp-controls-holder {
@@ -264,11 +310,6 @@
 .jp-type-playlist .jp-play {
   background: url("/litmus/images/playBtn.png") center no-repeat;
   background-size: contain;
-
-  // #litmus-player__featured:not(.sticky) & {
-  //   position: absolute;
-  //   bottom: 0;
-  // }
 }
 
 .jp-type-playlist .jp-play:focus {
@@ -384,7 +425,11 @@ div.jp-seeking-bg {
     left: 36px;
     width: calc(100% - 80px);
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 1024px) {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      width: calc(100% - 230px);
     }
   }
 }
@@ -414,6 +459,11 @@ div.jp-seeking-bg {
   #litmus-player__featured:not(.sticky) & {
     position: absolute;
     bottom: 40px;
+
+    @media screen and (min-width: 1024px) {
+      position: relative;
+      bottom: auto;
+    }
   }
 }
 
@@ -423,25 +473,37 @@ div.jp-seeking-bg {
 
 #litmus-player__featured .jp-current-time {
   padding-left: 43px;
-
 }
+
 #litmus-player__featured:not(.sticky) .jp-current-time {
   left: 0;
   padding-left: 0;
+
+  @media screen and (min-width: 1024px) {
+    padding-left: 43px;
+  }
 }
 
 #litmus-player__featured.sticky .jp-current-time {
   padding-left: 0;
-  margin-top: 0;
+  margin-top: 1px;
 }
 
 #litmus-player__featured .jp-duration {
-  margin-top: 0;
+  margin-top: 1px;
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 5px;
+  }
 }
 
 #litmus-player__featured:not(.sticky) .jp-duration {
   right: 0;
   padding-right: 0;
+
+  @media screen and (min-width: 1024px) {
+    padding-right: 43px;
+  }
 }
 
 .jp-current-time {

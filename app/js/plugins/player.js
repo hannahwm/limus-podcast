@@ -5,31 +5,6 @@ $(document).ready(function(){
   var featuredTitle = $(".litmus-featured__title").text();
   var featuredSrc = $(".litmus-player").data("src");
 
-
-  // var litmusPlayer = new jPlayerPlaylist(
-  //   {
-  //     jPlayer: ".litmus-player-bar",
-  //     cssSelectorAncestor: "#litmus-player-bar"
-  //   },
-  //     [
-  //       {
-  //         title: featuredTitle,
-  //         mp3: featuredSrc
-  //       }
-  //     ],
-  //   {
-  //     playlistOptions: {
-  //       enableRemoveControls: false
-  //     },
-  //     play: function() { // To avoid multiple jPlayers playing together.
-  //       $(this).jPlayer("pauseOthers", 0);
-  //     },
-  //     swfPath: "../js/library",
-  //     supplied: "mp3",
-  //     smoothPlayBar: true,
-  //     keyEnabled: true
-  //   });
-
     var litmusPlayer = new jPlayerPlaylist(
       {
         jPlayer: ".litmus-player",
@@ -91,6 +66,12 @@ $(document).ready(function(){
 
   $("#litmus-player__featured .jp-previous, #litmus-player__featured .jp-next").on("click tap", function() {
     $("#litmus-player__featured .jp-play").addClass("playing").removeClass("paused");
+
+    // var totalItems = $(".jp-playlist li");
+    //
+    // if (currentlyPlaying === totalItems.length) {
+    //   console.log("last");
+    // }
   });
 
   var playlistItems = $(".jp-playlist li");
@@ -133,28 +114,6 @@ $(document).ready(function(){
 
     });//click
   });//each
-
-
-  // $(".litmus-player").jPlayer({
-  //   ready: function () {
-  //     $(this).jPlayer("setMedia", {
-  //       title: "Bridging music and neuroscience",
-  //       mp3: "https://cdn.simplecast.com/audio/6447fb/6447fb3b-c5b4-48f6-aa0d-b105ce910c84/3e9f6aca-9723-4aef-82db-ace6e7e4cff1/Music_mixdown_128_tc.mp3"
-  //     });
-  //   },
-  //   play: function() { // To avoid multiple jPlayers playing together.
-  //     $(this).jPlayer("pauseOthers", 0);
-  //   },
-  //   swfPath: "../js/library",
-  //   supplied: "mp3",
-  //   cssSelectorAncestor: "#litmus-player__featured",
-  //   wmode: "window",
-  //   globalVolume: true,
-  //   useStateClassSkin: true,
-  //   autoBlur: false,
-  //   smoothPlayBar: true,
-  //   keyEnabled: true
-  // });
 
   //Turn the player into a sticky player bar in the top
   var target1;

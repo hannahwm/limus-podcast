@@ -446,7 +446,12 @@
 			} else {
 				// The index will be zero if it just looped round
 				if(index > 0) {
+					$(".jp-previous").removeClass("disabled");
 					this.play(index);
+				}
+
+				if (index === (this.playlist.length - 1)) {
+					$(".jp-next").addClass("disabled");
 				}
 			}
 		},
@@ -455,6 +460,14 @@
 
 			if(this.loop && this.options.playlistOptions.loopOnPrevious || index < this.playlist.length - 1) {
 				this.play(index);
+			}
+
+			if (index === (0)) {
+				$(".jp-previous").addClass("disabled");
+			}
+
+			if (index === (this.playlist.length - 2)) {
+				$(".jp-next").removeClass("disabled");
 			}
 		},
 		shuffle: function(shuffled, playNow) {

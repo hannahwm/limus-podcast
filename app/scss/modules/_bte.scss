@@ -13,15 +13,26 @@
 	&.bte-single {
 		max-height: none;
 		top: auto;
-		// z-index: 0;
 	}
 
 	@media screen and(min-width: 600px) {
-		top: 60px;
+		top: -60px;
 	}
 
 	@media screen and(min-width: 768px) {
 		top: -90px;
+	}
+
+	@media screen and(min-width: 1024px) {
+		top: -100px;
+	}
+
+	@media screen and(min-width: 1300px) {
+		top: -180px;
+	}
+
+	@media screen and(min-width: 2200px) {
+		top: -230px;
 	}
 
 	 .open & {
@@ -30,7 +41,7 @@
 			margin-bottom: -160px;
 
 			@media screen and(min-width: 600px) {
-				margin-bottom: -120px;
+				margin-bottom: -180px;
 			}
 
 			@media screen and(min-width: 768px) {
@@ -43,18 +54,23 @@
 		transform: skewY(-10deg);
 		position: relative;
 		z-index: -1;
-		margin-top: -140px;
+		max-width: 800px;
+		margin: -140px auto 0;
 	  padding: 160px 20px 45px;
 	  overflow: hidden;
 
 		@media screen and(min-width: 768px) {
 			padding: 100px 40px 45px;
-			margin-top: -160px;
+			margin: -160px auto 0;
 		}
 
 		@media screen and(min-width: 1024px) {
-			padding: 100px 40px 45px;
-			margin-top: -200px;
+			padding: 100px 0 45px;
+			margin: -200px auto 0;
+		}
+
+		@media screen and(min-width: 1300px) {
+			padding: 140px 40px 45px;
 		}
 
 		.bte-single & {
@@ -81,12 +97,17 @@
 
 		@media screen and(min-width: 768px) {
 			width: 50%;
-			margin: 0;
+			margin: -15px 0 0;
 			padding: 80px 20px 220px;
 		}
 
 		@media screen and(min-width: 1024px) {
 			padding: 120px 20px 220px;
+		}
+
+		@media screen and(min-width: 1300px) {
+			padding: 200px 20px 300px;
+			margin: -105px 0 0;
 		}
 	}
 
